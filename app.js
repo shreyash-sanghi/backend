@@ -10,7 +10,7 @@ const userRoutes = require("./src/routes/userRoutes");
 const chatRoutes = require("./src/routes/chatRoutes");
 const messageRoutes = require("./src/routes/messageRoutes");
 
-const { notFound, errorHandler } = require("./src/middleware/errorMiddleware");
+// const { notFound, errorHandler } = require("./src/middleware/errorMiddleware");
 try {
   mongoose.connect(process.env.DatabaseConnect).then(() => {
     console.log("Connected to Database");
@@ -49,8 +49,8 @@ app.use("/message", messageRoutes);
 app.use("/user", userRoutes);
 
 // Error Handling middlewares
-app.use(notFound);
-app.use(errorHandler);
+// app.use(notFound);
+// app.use(errorHandler);
 app.get("/", (req, res) => {
   res.send("Hello how are you");
 });
